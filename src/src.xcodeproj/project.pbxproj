@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25803B1C1C6EFCBB00719397 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 25803B1B1C6EFCBB00719397 /* main.c */; };
+		25803B2C1C6EFE0800719397 /* read_command.c in Sources */ = {isa = PBXBuildFile; fileRef = 25803B251C6EFE0800719397 /* read_command.c */; };
+		25803B2F1C6EFE0800719397 /* type_prompt.c in Sources */ = {isa = PBXBuildFile; fileRef = 25803B281C6EFE0800719397 /* type_prompt.c */; };
+		25803B301C6EFE0800719397 /* rshell.c in Sources */ = {isa = PBXBuildFile; fileRef = 25803B291C6EFE0800719397 /* rshell.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +26,10 @@
 
 /* Begin PBXFileReference section */
 		25803B181C6EFCBB00719397 /* src */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = src; sourceTree = BUILT_PRODUCTS_DIR; };
-		25803B1B1C6EFCBB00719397 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		25803B251C6EFE0800719397 /* read_command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = read_command.c; sourceTree = "<group>"; };
+		25803B281C6EFE0800719397 /* type_prompt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = type_prompt.c; sourceTree = "<group>"; };
+		25803B291C6EFE0800719397 /* rshell.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rshell.c; sourceTree = "<group>"; };
+		25803B2A1C6EFE0800719397 /* rshell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rshell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +62,10 @@
 		25803B1A1C6EFCBB00719397 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				25803B1B1C6EFCBB00719397 /* main.c */,
+				25803B251C6EFE0800719397 /* read_command.c */,
+				25803B281C6EFE0800719397 /* type_prompt.c */,
+				25803B291C6EFE0800719397 /* rshell.c */,
+				25803B2A1C6EFE0800719397 /* rshell.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -118,7 +126,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25803B1C1C6EFCBB00719397 /* main.c in Sources */,
+				25803B2C1C6EFE0800719397 /* read_command.c in Sources */,
+				25803B301C6EFE0800719397 /* rshell.c in Sources */,
+				25803B2F1C6EFE0800719397 /* type_prompt.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
