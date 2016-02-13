@@ -22,12 +22,16 @@ void type_prompt()
     else
         printf("[rshell]%s@unknown:",pwd->pw_name);
     //printf("pathname: %s,length:%d\npw_dir:%s,length:%d\n",
-            //pathname,strlen(pathname),pwd->pw_dir,strlen(pwd->pw_dir));
-    if(strlen(pathname) < strlen(pwd->pw_dir) || 
-            strncmp(pathname,pwd->pw_dir,strlen(pwd->pw_dir))!=0)
-        printf("%s$",pathname);
+    //pathname,strlen(pathname),pwd->pw_dir,strlen(pwd->pw_dir));
+    if(strlen(pathname) < strlen(pwd->pw_dir) ||
+       strncmp(pathname,pwd->pw_dir,strlen(pwd->pw_dir))!=0)
+        printf("%s",pathname);
     else
-        printf("~%s$",pathname+strlen(pwd->pw_dir));
+        printf("~%s",pathname+strlen(pwd->pw_dir));
+    if(geteuid()==0)
+        printf("#");
+    else
+        printf("$");
     return;
 }
 
