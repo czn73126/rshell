@@ -10,13 +10,24 @@
 void proc(void)
 {
     int status,i;
-    char *command;
+    char *command = NULL;
     char **parameters;
-    parameters = malloc(sizeof(char *)*(MAXARG+1));
+	char prompt[MAX_PROMPT];
+    parameters = malloc(sizeof(char *)*(MAXARG+2));
+    buffer = malloc(sizeof(char) * MAXLINE);
+    if(parameters == NULL || buffer == NULL)
+    {
+        printf("Rshell error:malloc failed.\n");
+        return;
+    }
+	//arg[0] is command
+	//arg[MAXARG+1] is NULL
     while(TRUE)
     {
-        type_prompt();
-        if(-1 == read_command(&command,parameters))
+        type_prompt(prompt);
+        if(-1 == read_command(&command,parameters,prompt))
+			continue;
+		if(builtin_command(command,parameters))
 			continue;
         if(fork()!=0)
         {
@@ -24,7 +35,7 @@ void proc(void)
         }
         else
         {
-            execve(command,parameters,0);
+            execvp(command,parameters);
         }
     }
 }
