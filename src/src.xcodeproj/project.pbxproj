@@ -10,6 +10,8 @@
 		25803B2C1C6EFE0800719397 /* read_command.c in Sources */ = {isa = PBXBuildFile; fileRef = 25803B251C6EFE0800719397 /* read_command.c */; };
 		25803B2F1C6EFE0800719397 /* type_prompt.c in Sources */ = {isa = PBXBuildFile; fileRef = 25803B281C6EFE0800719397 /* type_prompt.c */; };
 		25803B301C6EFE0800719397 /* rshell.c in Sources */ = {isa = PBXBuildFile; fileRef = 25803B291C6EFE0800719397 /* rshell.c */; };
+		25803B321C6F04CC00719397 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 25803B311C6F04CC00719397 /* makefile */; };
+		25803B381C6F063C00719397 /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 25803B371C6F063C00719397 /* test.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +32,8 @@
 		25803B281C6EFE0800719397 /* type_prompt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = type_prompt.c; sourceTree = "<group>"; };
 		25803B291C6EFE0800719397 /* rshell.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rshell.c; sourceTree = "<group>"; };
 		25803B2A1C6EFE0800719397 /* rshell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rshell.h; sourceTree = "<group>"; };
+		25803B311C6F04CC00719397 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		25803B371C6F063C00719397 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +69,31 @@
 				25803B251C6EFE0800719397 /* read_command.c */,
 				25803B281C6EFE0800719397 /* type_prompt.c */,
 				25803B291C6EFE0800719397 /* rshell.c */,
+				25803B371C6F063C00719397 /* test.c */,
+				25803B311C6F04CC00719397 /* makefile */,
 				25803B2A1C6EFE0800719397 /* rshell.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		25803B331C6F054200719397 /* src_ex */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 25803B341C6F054200719397 /* Build configuration list for PBXLegacyTarget "src_ex" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Volumes/Transcend/Swift/rshell/src/src;
+			dependencies = (
+			);
+			name = src_ex;
+			passBuildSettingsInEnvironment = 1;
+			productName = src_ex;
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		25803B171C6EFCBB00719397 /* src */ = {
@@ -96,10 +119,16 @@
 		25803B101C6EFCBA00719397 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = czn;
 				TargetAttributes = {
 					25803B171C6EFCBB00719397 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					25803B331C6F054200719397 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -117,6 +146,7 @@
 			projectRoot = "";
 			targets = (
 				25803B171C6EFCBB00719397 /* src */,
+				25803B331C6F054200719397 /* src_ex */,
 			);
 		};
 /* End PBXProject section */
@@ -126,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25803B381C6F063C00719397 /* test.c in Sources */,
 				25803B2C1C6EFE0800719397 /* read_command.c in Sources */,
 				25803B301C6EFE0800719397 /* rshell.c in Sources */,
+				25803B321C6F04CC00719397 /* makefile in Sources */,
 				25803B2F1C6EFE0800719397 /* type_prompt.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +260,29 @@
 			};
 			name = Release;
 		};
+		25803B351C6F054200719397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		25803B361C6F054200719397 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -245,6 +300,14 @@
 			buildConfigurations = (
 				25803B201C6EFCBB00719397 /* Debug */,
 				25803B211C6EFCBB00719397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		25803B341C6F054200719397 /* Build configuration list for PBXLegacyTarget "src_ex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25803B351C6F054200719397 /* Debug */,
+				25803B361C6F054200719397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
